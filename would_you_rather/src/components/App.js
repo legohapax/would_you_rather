@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { handleInitialData } from '../actions/shared'
 import { connect } from "react-redux"
+import ListPolls from './ListPolls'
 
 
 class App extends Component {
@@ -11,10 +12,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        New app
+        {this.props.loading === true
+          ? null
+          : <ListPolls />}
+        
       </div>
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps ({ authedUser }) {
+    return {
+      loading: authedUser === null
+    }
+  }
+  
+export default connect(mapStateToProps)(App) 
+
+

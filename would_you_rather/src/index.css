@@ -12,3 +12,14 @@ body {
 .polls-list {
   border: 1px solid
 }
+
+.poll {
+  border: 1px solid;
+  margin: 5px
+}
+
+.option {
+  font-size: 25px;
+  margin: 20px;
+  color: red
+}

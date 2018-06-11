@@ -1,5 +1,6 @@
 import React,{ Component } from 'react'
 import { connect } from 'react-redux'
+import PollSneakPeek from './PollSneakPeek'
 
 class ListPolls extends Component {
     state = {
@@ -21,7 +22,8 @@ class ListPolls extends Component {
                             this.props.polls[id].optionTwo.votes.includes(this.props.authedUser)) && 
                                 <li key={id}>
                                     <div>
-                                    {this.props.polls[id].id}
+                                    
+                                    <PollSneakPeek id={id}/>
                                     </div>
                                 </li>
                         ))
@@ -32,7 +34,8 @@ class ListPolls extends Component {
                             this.props.polls[id].optionTwo.votes.includes(this.props.authedUser)) && 
                                 <li key={id}>
                                     <div>
-                                    {this.props.polls[id].id}
+                                    
+                                    <PollSneakPeek id={id}/>
                                     </div>
                                 </li>
                     
@@ -59,6 +62,7 @@ class ListPolls extends Component {
                     </select>
                     
                 {this.renderPolls(this.state.answeredPolls)}
+                
             </div>
         )
     }

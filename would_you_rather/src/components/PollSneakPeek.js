@@ -12,8 +12,13 @@ class PollSneakPeek extends Component {
         return(
             <div className='poll' >
                 <h2> Would you rather ... </h2>
-                <div className='option'> {`${optionOne.votes.length}`} X {`${optionOne.text}`} </div>
-                <div className='option'> {`${optionTwo.votes.length}`} X {`${optionTwo.text}`} </div>
+                <div className='option'> 
+                    {`${optionOne.votes.length}`} X {`${optionOne.text}`} 
+                    
+                </div>
+                <div className='option'> 
+                {`${optionTwo.votes.length}`} X {`${optionTwo.text}`} 
+                </div>
                 <div> author: {`${author}`} </div>
                 <div> timestamp: {`${timestamp}`} </div>
             </div>

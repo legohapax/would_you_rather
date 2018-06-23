@@ -13,13 +13,31 @@ body {
   border: 1px solid
 }
 
-.poll {
+.pollSneakPeak {
   border: 1px solid;
   margin: 5px
 }
 
+.pollDetail {
+  border: 1px solid;
+  margin: 5px
+}
+
+.optionDetails {
+  font-size: 15px;
+}
+
+
 .option {
   font-size: 25px;
   margin: 20px;
-  color: red
+  color: red;
+  border: 1px solid;
+}
+
+.optionHighlight {
+  font-size: 25px;
+  margin: 20px;
+  color: green;
+  border: 1px solid;
 }

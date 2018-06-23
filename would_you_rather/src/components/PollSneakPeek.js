@@ -10,15 +10,15 @@ class PollSneakPeek extends Component {
             } = this.props.poll
 
         return(
-            <div className='poll' >
+            <div className='pollSneakPeak' >
                 <h2> Would you rather ... </h2>
-                <div className='option'> 
+                {/* <div className='option'> 
                     {`${optionOne.votes.length}`} X {`${optionOne.text}`} 
                     
                 </div>
                 <div className='option'> 
                 {`${optionTwo.votes.length}`} X {`${optionTwo.text}`} 
-                </div>
+                </div> */}
                 <div> author: {`${author}`} </div>
                 <div> timestamp: {`${timestamp}`} </div>
             </div>
@@ -29,14 +29,9 @@ class PollSneakPeek extends Component {
 
 function mapStateToProps ({polls}, { id }) {
     const poll = polls[id]
-    //const parentTweet = tweet ? tweets[tweet.replyingTo] : null
-//    console.log(poll)
-    
 
     return {
         poll: poll
-        // ? formatTweet(tweet, users[tweet.author], authedUser, parentTweet)
-        // : null
     }   
 }
 

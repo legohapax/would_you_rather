@@ -1,6 +1,7 @@
 import React,{ Component } from 'react'
 import { connect } from 'react-redux'
 import PollSneakPeek from './PollSneakPeek'
+import PollDetail from './PollDetail'
 
 class ListPolls extends Component {
     state = {
@@ -62,6 +63,7 @@ class ListPolls extends Component {
                     </select>
                     
                 {this.renderPolls(this.state.answeredPolls)}
+                <PollDetail id="6ni6ok3ym7mf1p33lnez"/>
                 
             </div>
         )

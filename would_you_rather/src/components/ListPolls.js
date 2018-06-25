@@ -63,7 +63,7 @@ class ListPolls extends Component {
                     </select>
                     
                 {this.renderPolls(this.state.answeredPolls)}
-                <PollDetail id="6ni6ok3ym7mf1p33lnez"/>
+                {/* <PollDetail id="6ni6ok3ym7mf1p33lnez"/> */}
                 
             </div>
         )

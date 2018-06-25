@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 import { connect } from "react-redux"
 import ListPolls from './ListPolls'
+import PollDetail from './PollDetail'
+import Nav from './Nav'
 
 
 class App extends Component {
@@ -11,12 +14,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.props.loading === true
-          ? null
-          : <ListPolls />}
+        <Router>
+            <div className="App">
+                {this.props.loading === true
+                    ? null
+                    : <div>
+                      <Route path='/' exact component={ListPolls}/>
+                      <Route path='/poll/:id' component={PollDetail}/>
+                      </div>
+                }
         
-      </div>
+          </div>
+        </Router>
+
+      
     );
   }
 }

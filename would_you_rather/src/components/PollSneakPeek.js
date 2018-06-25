@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 
@@ -6,11 +7,12 @@ class PollSneakPeek extends Component {
     render() {
         //console.log(this.props.poll.author)
         const {
-            author, timestamp, optionOne,optionTwo
+            author, timestamp, optionOne,optionTwo,id
             } = this.props.poll
 
         return(
-            <div className='pollSneakPeak' >
+            
+            <Link to={`/poll/${id}`} className='pollSneakPeak' >
                 <h2> Would you rather ... </h2>
                 {/* <div className='option'> 
                     {`${optionOne.votes.length}`} X {`${optionOne.text}`} 
@@ -21,7 +23,7 @@ class PollSneakPeek extends Component {
                 </div> */}
                 <div> author: {`${author}`} </div>
                 <div> timestamp: {`${timestamp}`} </div>
-            </div>
+            </Link>
         )
     }
 

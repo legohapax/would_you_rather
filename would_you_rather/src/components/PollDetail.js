@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+
 import Image from 'react'
 
 class PollDetail extends Component {
-    kkk = this.props.poll.author
+    
     render () {
+        //console.log(match.params.id)
         const {
-            author, timestamp, optionOne,optionTwo
+            author, timestamp, optionOne,optionTwo,id
             } = this.props.poll
         const number_of_all_votes = optionOne.votes.length + optionTwo.votes.length
         const authed_player_has_answered = optionOne.votes.includes(this.props.authedUser)
@@ -45,7 +48,7 @@ class PollDetail extends Component {
     }
 }
 
-    function mapStateToProps ({polls, users, authedUser}, { id }) {
+    function mapStateToProps ({polls, users, authedUser}, {id}) {
         const poll = polls[id]
     
         return {
@@ -56,4 +59,4 @@ class PollDetail extends Component {
     }
 
 
-export default connect(mapStateToProps)(PollDetail)
+export default withRouter(connect(mapStateToProps)(PollDetail))

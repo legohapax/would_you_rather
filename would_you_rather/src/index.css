@@ -5,6 +5,11 @@ body {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: black
+}
+
 .center {
   text-align: center
 }
@@ -14,7 +19,7 @@ body {
 }
 
 .pollSneakPeak {
-  
+  /* border: 1px solid; */
   margin: 5px;
 
 }
@@ -41,4 +46,29 @@ body {
   margin: 20px;
   color: green;
   border: 1px solid;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* .nav {
+  border: 4px solid;
+} */
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 5px;
+  
+}
+
+.authedUser {
+  color: red;
 }

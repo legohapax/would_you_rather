@@ -1,11 +1,26 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { handleSaveQuestionAnswer } from '../actions/polls'
 
 import Image from 'react'
 
 class PollDetail extends Component {
-    
+    handleVote = (e) => {
+        e.preventDefault()
+        console.log(e.target.name)
+ 
+
+        const { dispatch, authedUser, polls } = this.props
+
+       // console.log(authedUser,this.props.match.params.id)
+        dispatch(handleSaveQuestionAnswer({
+           id: this.props.match.params.id,  // nebo toto? polls[this.props.match.params.id].id
+           option: e.target.name,//který option user vybral
+           authedUser
+        }))
+
+    }
     render () {
         //console.log(this.props.match.params.id)
         const {
@@ -28,6 +43,9 @@ class PollDetail extends Component {
                 
                 <div className={optionOne.votes.includes(this.props.authedUser) ? 'optionHighlight' : 'option'}> 
                     {`${optionOne.text}`} 
+                    <button name='optionOne' onClick={this.handleVote}> 
+                        vote
+                    </button>
                     {authed_user_has_answered &&
                         <div className='optionDetails'>
                             <p>Number of votes: {`${optionOne.votes.length}`} </p>

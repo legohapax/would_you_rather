@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 import { connect } from "react-redux"
 import ListPolls from './ListPolls'
@@ -7,6 +7,7 @@ import PollDetail from './PollDetail'
 import Nav from './Nav'
 import NewPoll from './NewPoll'
 import Leaderboard from './Leaderboard'
+import NoMatch from './NoMatch'
 
 
 class App extends Component {
@@ -22,10 +23,13 @@ class App extends Component {
                 {this.props.loading === true
                     ? null
                     : <div>
-                      <Route path='/' exact component={ListPolls}/>
-                      <Route path='/poll/:id' component={PollDetail}/>
-                      <Route path='/add' component={NewPoll}/>
-                      <Route path='/leaderboard' component={Leaderboard}/>
+                      <Switch>
+                        <Route path='/' exact component={ListPolls}/>
+                        <Route path='/poll/:id' component={PollDetail}/>
+                        <Route path='/add' component={NewPoll}/>
+                        <Route path='/leaderboard' component={Leaderboard}/>
+                        <Route component={NoMatch}/>
+                      </Switch>
                       </div>
                 }
         

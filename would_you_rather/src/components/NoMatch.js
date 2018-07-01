@@ -1,11 +1,13 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 
 class NoMatch extends Component {
     render() {
         return(
             <div>
-                no NoMatch
+                404 This URL doesn't lead anywhere. Sorry.
             </div>
         )
     }
 }
+
+export default NoMatch

@@ -6,6 +6,7 @@ import ListPolls from './ListPolls'
 import PollDetail from './PollDetail'
 import Nav from './Nav'
 import NewPoll from './NewPoll'
+import Leaderboard from './Leaderboard'
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
                       <Route path='/' exact component={ListPolls}/>
                       <Route path='/poll/:id' component={PollDetail}/>
                       <Route path='/add' component={NewPoll}/>
+                      <Route path='/leaderboard' component={Leaderboard}/>
                       </div>
                 }
         

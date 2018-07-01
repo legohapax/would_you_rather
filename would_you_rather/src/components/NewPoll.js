@@ -54,6 +54,9 @@ class NewPoll extends Component {
                 <h3>
                     Compose new poll
                 </h3>
+                <h4>
+                    Would you rather ...
+                </h4>
                 <form onSubmit={this.handleSubmit}>
                     <textarea
                         id='optionOne'

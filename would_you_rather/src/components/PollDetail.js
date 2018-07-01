@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleSaveQuestionAnswer } from '../actions/polls'
 
-import Image from 'react'
 
 class PollDetail extends Component {
     handleVote = (e) => {

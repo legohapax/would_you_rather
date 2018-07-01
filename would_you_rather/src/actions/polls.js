@@ -23,7 +23,9 @@ function saveQuestionAnswer ({id, authedUser, option}) {
 
 export function handleSaveQuestionAnswer (info) {
     return (dispatch) => {
+        console.log("handlesavequestionanswer",info)
         dispatch(saveQuestionAnswer(info))
+        //console.log("jsem tu1")
         return _saveQuestionAnswer(info)
             .catch((e)=>{
                 console.warn('error in hadnel poll: ', e)

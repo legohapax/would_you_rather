@@ -8,16 +8,17 @@ import Image from 'react'
 class PollDetail extends Component {
     handleVote = (e) => {
         e.preventDefault()
-        console.log(e.target.name)
+        //console.log(e.target.name)
  
 
         const { dispatch, authedUser, polls } = this.props
 
-       // console.log(authedUser,this.props.match.params.id)
+        //console.log(authedUser,this.props.match.params.id)
         dispatch(handleSaveQuestionAnswer({
-           id: this.props.match.params.id,  // nebo toto? polls[this.props.match.params.id].id
-           option: e.target.name,//který option user vybral
-           authedUser
+            authedUser,
+            id: this.props.match.params.id,  // nebo toto? polls[this.props.match.params.id].id
+            option: e.target.name,//který option user vybral
+           
         }))
 
     }
@@ -34,7 +35,7 @@ class PollDetail extends Component {
         return (
             
             <div className="pollDetail">
-            {console.log(authed_user_has_answered)}
+            
                 <h2> Would you rather </h2>
                 {author}
                 {/* TODO - nefunguje avatar */}
@@ -43,9 +44,11 @@ class PollDetail extends Component {
                 
                 <div className={optionOne.votes.includes(this.props.authedUser) ? 'optionHighlight' : 'option'}> 
                     {`${optionOne.text}`} 
+                    {!authed_user_has_answered && 
                     <button name='optionOne' onClick={this.handleVote}> 
                         vote
                     </button>
+                    }
                     {authed_user_has_answered &&
                         <div className='optionDetails'>
                             <p>Number of votes: {`${optionOne.votes.length}`} </p>
@@ -55,7 +58,12 @@ class PollDetail extends Component {
                 </div>
                 
                 <div className={optionTwo.votes.includes(this.props.authedUser) ? 'optionHighlight' : 'option'}> 
-                 {`${optionTwo.text}`}
+                    {`${optionTwo.text}`}
+                    {!authed_user_has_answered && 
+                        <button name='optionTwo' onClick={this.handleVote}> 
+                            vote
+                        </button>
+                    }
                     {authed_user_has_answered &&
                         <div className='optionDetails'>
                             <p>Number of votes: {`${optionTwo.votes.length}`}</p>

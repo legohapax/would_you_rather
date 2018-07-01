@@ -39,6 +39,7 @@ a {
   margin: 20px;
   color: red;
   border: 1px solid;
+  padding: 15px;
 }
 
 .optionHighlight {
@@ -46,6 +47,7 @@ a {
   margin: 20px;
   color: green;
   border: 1px solid;
+  padding: 15px;
 }
 
 ul {
@@ -71,4 +73,9 @@ ul {
 
 .authedUser {
   color: red;
+}
+
+button {
+  display: block;
+  margin: auto
 }

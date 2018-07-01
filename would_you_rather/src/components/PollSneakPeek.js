@@ -14,6 +14,12 @@ class PollSneakPeek extends Component {
             
             <Link to={`/poll/${id}`} className='pollSneakPeak' >
                 <h2> Would you rather ... </h2>
+                
+                {/* <div>
+                    {optionOne}
+                    {optionTwo}
+                </div> */}
+                
                 {/* <div className='option'> 
                     {`${optionOne.votes.length}`} X {`${optionOne.text}`} 
                     

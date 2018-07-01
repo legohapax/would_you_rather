@@ -17,7 +17,9 @@ class PollDetail extends Component {
         dispatch(handleSaveQuestionAnswer({
             authedUser,
             id: this.props.match.params.id,  // nebo toto? polls[this.props.match.params.id].id
+            qid: this.props.match.params.id,
             option: e.target.name,//který option user vybral
+            answer: e.target.name
            
         }))
 

@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 import ListPolls from './ListPolls'
 import PollDetail from './PollDetail'
 import Nav from './Nav'
+import NewPoll from './NewPoll'
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
                     : <div>
                       <Route path='/' exact component={ListPolls}/>
                       <Route path='/poll/:id' component={PollDetail}/>
+                      <Route path='/add' component={NewPoll}/>
                       </div>
                 }
         

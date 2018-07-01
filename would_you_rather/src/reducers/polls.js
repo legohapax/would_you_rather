@@ -1,4 +1,4 @@
-import {RECEIVE_POLLS, SAVE_QUESTION_ANSWER} from "../actions/polls"
+import {RECEIVE_POLLS, SAVE_QUESTION_ANSWER, ADD_POLL} from "../actions/polls"
 
 export default function tweets (state = {}, action) {
     switch(action.type) {
@@ -25,6 +25,15 @@ export default function tweets (state = {}, action) {
                     : state[action.id].optionTwo.votes
                 }
               }
+              
+            }
+        case ADD_POLL:
+            const { poll } = action
+            return {
+                
+                ...state,
+                [action.poll.id]: action.poll
+
             }
         
         default :

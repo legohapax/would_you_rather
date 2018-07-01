@@ -1,7 +1,28 @@
-import { _saveQuestionAnswer } from '../utils/_DATA'
+import { _saveQuestionAnswer, _saveQuestion} from '../utils/_DATA'
 
 export const RECEIVE_POLLS = 'RECEIVE_POLLS'
 export const SAVE_QUESTION_ANSWER = 'SAVE_QUESTION_ANSWER'
+export const ADD_POLL = 'ADD_POLL'
+
+
+function addPoll (poll) {
+    return {
+        type: ADD_POLL,
+        poll
+    }
+}
+
+export function handleSaveQuestion(optionOneText,optionTwoText) {
+    return (dispatch,getState) =>  {
+        const { authedUser } = getState()
+        const author = authedUser
+        console.log('in handlesavequestion :', optionOneText,optionTwoText,authedUser)
+        return _saveQuestion({optionOneText,optionTwoText,author})
+            .then((poll) => dispatch(addPoll(poll)))
+    }
+
+}
+
 
 export function receivePolls (polls) {
     return {
@@ -9,7 +30,7 @@ export function receivePolls (polls) {
         polls
     }
 }
-// has liked chybí
+
 function saveQuestionAnswer ({id, authedUser, option}) {
     return {
         type: SAVE_QUESTION_ANSWER,

@@ -10,12 +10,9 @@ class UserDetail extends Component {
         return(
             <div className='userDetail'>
                 <h3>{name}</h3>
-                <p>avatar</p>
+                <img src={this.props.user.avatarURL} alt="Smiley face" width='100px'/>
                 <p> Asked questions: {questions.length}</p>
                 <p> Answered questions: {Object.keys(answers).length}</p>
-                
-            
-            
             </div>
         )
     }

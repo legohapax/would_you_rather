@@ -16,7 +16,7 @@ export default function tweets (state = {}, action) {
                   ...state[action.id].optionOne,
                   votes: action.option === "optionOne"
                   ? state[action.id].optionOne.votes.concat([action.authedUser])
-                  : state[action.id].optionOne.votes //tohle možná musí jít do svého ...optionTwo
+                  : state[action.id].optionOne.votes
                 },
                 optionTwo: {
                     ...state[action.id].optionTwo,

@@ -15,12 +15,14 @@ a {
 }
 
 .polls-list {
-  
+  border: 1px solid;
+  /* background-color: red */
 }
 
 .pollSneakPeak {
-  /* border: 1px solid; */
-  margin: 5px;
+  border: 1px solid;
+  margin: 50px;
+  /* background-color:green; */
 
 }
 
@@ -91,4 +93,8 @@ textarea {
 .userDetail {
   border: 1px solid;
   margin: 3px;
+}
+
+img {
+  margin: 10px;
 }

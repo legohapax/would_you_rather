@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: 'https://en.wikipedia.org/wiki/File:American_Eskimo_Dog.jpg',
+    avatarURL: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Felis_silvestris_silvestris_small_gradual_decrease_of_quality.png',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: 'https://en.wikipedia.org/wiki/File:American_Eskimo_Dog.jpg',
+    avatarURL: 'http://img22.rajce.idnes.cz/d2202/15/15227/15227286_8e2c6e58ce4ed8ec532aea608792c2b2/images/DSC_3499orA.jpg?ver=0" alt="Smiley face',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: 'https://en.wikipedia.org/wiki/File:American_Eskimo_Dog.jpg',
+    avatarURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/American_Eskimo_Dog.jpg/764px-American_Eskimo_Dog.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

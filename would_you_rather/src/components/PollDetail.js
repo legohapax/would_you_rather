@@ -36,12 +36,13 @@ class PollDetail extends Component {
         return (
             
             <div className="pollDetail">
-            
-                <h2> Would you rather </h2>
-                {author}
-                {/* TODO - nefunguje avatar */}
                 
-                <img src="dog1.jpeg" alt="Smiley face" /> 
+                <h2> Would you rather </h2>
+                <div>
+                    Author: {author}
+                </div>
+                
+                <img src={this.props.users[author].avatarURL} alt="Smiley face" width='100px'/> 
                 
                 <div className={optionOne.votes.includes(this.props.authedUser) ? 'optionHighlight' : 'option'}> 
                     {`${optionOne.text}`} 

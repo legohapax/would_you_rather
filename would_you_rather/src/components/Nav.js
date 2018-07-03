@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { handleChangeUser } from '../actions/authedUser'
 
 
 class Nav extends Component {
+    
+    handleClick = (e) => {
+        e.preventDefault()
+        this.props.dispatch(handleChangeUser(null))
+    }
+    
     render () {
         return(
             <nav className='nav'>
@@ -27,6 +34,11 @@ class Nav extends Component {
                         <NavLink to='/leaderboard' exact activeClassName='active'>
                                 Leaderboard
                         </NavLink>
+                    </li>
+                    <li>
+                        <button onClick={this.handleClick}>
+                            logout
+                        </button>
                     </li>
 
                 </ul>

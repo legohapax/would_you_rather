@@ -8,6 +8,7 @@ import Nav from './Nav'
 import NewPoll from './NewPoll'
 import Leaderboard from './Leaderboard'
 import NoMatch from './NoMatch'
+import Login from './Login'
 
 
 class App extends Component {
@@ -16,13 +17,16 @@ class App extends Component {
   }
 
   render() {
-    return (
-        <Router>
-            <div className="App">
-                <Nav/>
-                {this.props.loading === true
-                    ? null
-                    : <div>
+      return (
+          <Router>
+              <div className="App">
+                { this.props.authedUser === null
+                  ?
+                  <Login/>
+                  :
+                  <Fragment>
+                    <Nav/>
+                    <div>
                       <Switch>
                         <Route path='/' exact component={ListPolls}/>
                         <Route path='/poll/:id' component={PollDetail}/>
@@ -30,22 +34,27 @@ class App extends Component {
                         <Route path='/leaderboard' component={Leaderboard}/>
                         <Route component={NoMatch}/>
                       </Switch>
-                      </div>
+                    </div>
+                  </Fragment>
                 }
-        
-          </div>
-        </Router>
+                      
+                      
+                      
+                  
+              </div>
+          </Router>
 
-      
-    );
+        
+      );
   }
 }
 
 function mapStateToProps ({ authedUser }) {
+    
     return {
-      loading: authedUser === null
+      authedUser
     }
-  }
+}
   
 export default connect(mapStateToProps)(App) 
 

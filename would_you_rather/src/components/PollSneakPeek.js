@@ -18,7 +18,6 @@ class PollSneakPeek extends Component {
                         <p>{`${optionTwo.text}`}</p>
                     </div>
                     <div> author: {`${author}`} </div>
-                    <div> timestamp: {`${timestamp}`} </div>
                 </div>
             </Link>
         )

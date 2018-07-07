@@ -16,7 +16,7 @@ class Nav extends Component {
             <nav className='nav'>
                 <ul>         
                     <li className='authedUser'>
-                    Logged-in user: {this.props.authedUser}
+                        Logged-in user: {this.props.authedUser}
                     </li>
                     <li>
                         <NavLink to='/' exact activeClassName='active'>

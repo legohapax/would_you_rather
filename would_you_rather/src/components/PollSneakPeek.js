@@ -5,34 +5,21 @@ import { connect } from 'react-redux'
 
 class PollSneakPeek extends Component {
     render() {
-        //console.log(this.props.poll.author)
         const {
             author, timestamp, optionOne,optionTwo,id
             } = this.props.poll
 
         return(
-            
             <Link to={`/poll/${id}`}  >
                 <div className='pollSneakPeak'>
                     <h2> Would you rather ... </h2>
-                    
                     <div>
                         <p>{`${optionOne.text}`}</p>
-                        
                         <p>{`${optionTwo.text}`}</p>
-                        
                     </div>
-                    
-                    {/* <div className='option'> 
-                        {`${optionOne.votes.length}`} X {`${optionOne.text}`} 
-                        
-                    </div>
-                    <div className='option'> 
-                    {`${optionTwo.votes.length}`} X {`${optionTwo.text}`} 
-                    </div> */}
                     <div> author: {`${author}`} </div>
                     <div> timestamp: {`${timestamp}`} </div>
-                    </div>
+                </div>
             </Link>
         )
     }

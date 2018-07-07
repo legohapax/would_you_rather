@@ -6,7 +6,7 @@ import { handleChangeUser } from '../actions/authedUser'
 
 class Nav extends Component {
     
-    handleClick = (e) => {
+    handleLogoutClick = (e) => {
         e.preventDefault()
         this.props.dispatch(handleChangeUser(null))
     }
@@ -23,28 +23,25 @@ class Nav extends Component {
                             Home
                         </NavLink>
                     </li>
-                    
                     <li>
                         <NavLink to='/add' exact activeClassName='active'>
-                                New Poll
+                            New Poll
                         </NavLink>
                     </li>
-                    
                     <li>
                         <NavLink to='/leaderboard' exact activeClassName='active'>
-                                Leaderboard
+                            Leaderboard
                         </NavLink>
                     </li>
                     <li>
-                        <button onClick={this.handleClick}>
-                            logout
+                        <button onClick={this.handleLogoutClick}>
+                            Logout
                         </button>
                     </li>
-
                 </ul>
             </nav>
-    )
-}
+        )
+    }
 
 }
 

@@ -9,8 +9,8 @@ class NewPoll extends Component {
         textOptionTwo: '',
         toHome: false
     }
+    
     handleChange = (e) => {
-        console.log('1: ' ,this.state.textOptionOne, '2: ', this.state.textOptionTwo)
         if (e.target.id === 'optionOne') {
             const textOptionOne = e.target.value
             this.setState(()=>({
@@ -22,7 +22,6 @@ class NewPoll extends Component {
                 textOptionTwo
             }))
         }
-        //console.log('1: ' ,this.state.textOptionOne, '2: ', this.state.textOptionTwo)        
     }
 
     handleSubmit = (e) => {

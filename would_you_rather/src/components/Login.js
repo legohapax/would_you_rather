@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { handleChangeUser}  from '../actions/authedUser'
+import { handleChangeUser }  from '../actions/authedUser'
 
 class Login extends Component {
     
-    
     handleChange = (e) => {
         e.preventDefault()
-        console.log(e.target.value)
         this.props.dispatch(handleChangeUser(e.target.value))
     }
     

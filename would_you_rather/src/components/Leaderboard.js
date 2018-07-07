@@ -6,7 +6,7 @@ import UserDetail from './UserDetail'
 class Leaderboard extends Component {
     componentDidMount() {
         this.props.dispatch(handleInitialData())
-      }
+    }
     
     render() {
         return(

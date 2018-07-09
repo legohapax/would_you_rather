@@ -29,7 +29,7 @@ class App extends Component {
                           <div>
                               <Switch>
                                   <Route path='/' exact component={ListPolls}/>
-                                  <Route path='/poll/:id' component={PollDetail}/>
+                                  <Route path='/question/:question_id' component={PollDetail}/>
                                   <Route path='/add' component={NewPoll}/>
                                   <Route path='/leaderboard' component={Leaderboard}/>
                                   <Route component={NoMatch}/>

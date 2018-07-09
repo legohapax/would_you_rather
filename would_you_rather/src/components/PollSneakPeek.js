@@ -10,7 +10,7 @@ class PollSneakPeek extends Component {
             } = this.props.poll
 
         return(
-            <Link to={`/poll/${id}`}  >
+            <Link to={`/question/${id}`}  >
                 <div className='pollSneakPeak'>
                     <h2> Would you rather ... </h2>
                     <div>

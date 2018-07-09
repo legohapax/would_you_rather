@@ -12,8 +12,8 @@ class PollDetail extends Component {
 
         dispatch(handleSaveQuestionAnswer({
             authedUser,
-            id: this.props.match.params.id,
-            qid: this.props.match.params.id,
+            id: this.props.match.params.question_id,
+            qid: this.props.match.params.question_id,
             option: e.target.name,
             answer: e.target.name
         }))
@@ -23,7 +23,7 @@ class PollDetail extends Component {
     render () {
         const {
             author, optionOne,optionTwo
-            } = this.props.polls[this.props.match.params.id]
+            } = this.props.polls[this.props.match.params.question_id]
         const number_of_all_votes = optionOne.votes.length + optionTwo.votes.length
         const authed_user_has_answered = optionOne.votes.includes(this.props.authedUser) 
             || optionTwo.votes.includes(this.props.authedUser)
